@@ -1,9 +1,9 @@
 // here we define Data Type of elements in the stack (user mission)
-struct Stack
+struct stack
 {
    StackEntry entry[MaxSize];
    int top;
-};
+}Stack;
 void CreateStack(Stack *ps)
 {
     // This Function to make initialization for the stack
