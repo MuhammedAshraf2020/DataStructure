@@ -64,7 +64,7 @@ int StackTop(StackEntry *pe , Stack *ps )
     }
 }
 
-int StackFull(stack *ps)
+int StackFull(Stack *ps)
 {
     // This Function always return Stack is not Full 
     // param : address of the stack
@@ -94,13 +94,11 @@ void ClearStack(Stack *ps)
     //param : address of stack
     //return: void
   StackNode *pn = ps->top;
-
-
   while(pn)
   {
     pn = pn->next;
     free(ps->top);    
-    ps->top = np;
+    ps->top = pn;
   }
   ps->size = 0;
 }
@@ -109,10 +107,10 @@ void TraverStakc(Stack *ps , void(*pf) (StackEntry))
     //This Function to pass every element in the stack in Function
     //param : address of the stack , address of the function
     //return: void
-    StackNode *pn = ps->top
+    StackNode *pn = ps->top;
     while(pn)
     {
-        (*pf) (pn->top->entry);
+        (*pf) (ps->top->entry);
         pn = pn->next;
     }
 
