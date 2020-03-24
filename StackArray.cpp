@@ -1,16 +1,24 @@
 class Stack
 {
+
 private:
 
-    StackEntry arr[MaxSize];
+    StackEntry *arr;
     int top;
     int capacity;
 
 public:
-    Stack()
+    Stack(int Size)
     {
-        // To Make initalization for int top
+        // To Make initalization for int top , and Create Stack
+        arr = new StackEntry[Size];
         top = 0;
+        capacity = Size;
+    }
+    ~Stack()
+    {
+        // To Delete Array
+        delete arr;
     }
 
     int push(StackEntry e)
@@ -42,7 +50,7 @@ public:
     int StackFull()
     {
         // Function To return 0 if Stack Not Fall : 1 if Stack Full 
-        return top == MaxSize;
+        return top == capacity;
     }
     int StackEmpty()
     {
@@ -57,6 +65,8 @@ public:
     int StackTop(StackEntry *pe)
     {
         //Function To return the top element in the stack
+        //param : address of StackEntry var
+        //return: 1 if mission suc : 0 if mission faild
         if (!StackEmpty())
         {
             *pe = arr[top];
