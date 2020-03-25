@@ -70,7 +70,7 @@ public:
         // return number of elements
         return size;
     }
-    int Peek()
+    StackEntry Peek()
     {
         // return the top element without delete him
         return top->entry; 
