@@ -35,23 +35,24 @@ public:
         ++size;
 
     }
-    int pop()
+    int pop(StackEntry *pe)
     {
         // If Stack is not Empty this Function pop from Stack
-        // return Element NotEmpty
-        // return NULL Empty
+        //param: address of variable which you want to save entry in
+        // return 1 if mission suc
+        // return 0 if mission faild
         if(!StackEmpty())
     {
         StackNode *Temp;
-        StackEntry e = top->entry;
+        *pe = top->entry;
         Temp = top;
         top = top->next;
         free(Temp);
         --size;
-        return e;
+         return 1;
     }
     else
-        return NULL;
+        return 0;
     }
     int StackEmpty()
     {
