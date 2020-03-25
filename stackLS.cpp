@@ -1,3 +1,9 @@
+class StackNode
+{
+ StackEntry entry;
+ StackNode *next;
+}
+
 class Stack
 {
     //Class to Link Nodes togther
