@@ -1,7 +1,7 @@
 // here we define Data Type of elements in the stack (user mission)
 struct stack
 {
-   StackEntry entry[MaxSize];
+   StackEntry entry[MaxStack];
    int top;
 }Stack;
 void CreateStack(Stack *ps)
@@ -19,7 +19,7 @@ int StackFull(Stack *ps)
     //return: 1 when stack is Full
     //return: 0 when stack is Not Full
 
-    return ps->top == MaxSize ;
+    return ps->top == MaxStack ;
 }
 
 int push(StackEntry e , Stack *ps)
