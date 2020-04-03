@@ -1,10 +1,10 @@
-#define MaxSize 
+#define MaxQueue 
 #define QueueEntry
 
 typedef struct  queue{
 // Queue Struct 
 
-	QueueEntry arr[MaxSize];
+	QueueEntry arr[MaxQueue];
 	int front;
 	int rear;
 	int size;
@@ -31,7 +31,7 @@ void EnQueue(QueueEntry e , Queue*pq)
 	// return: 1 if mission suc : 0 if mission field
 	if (!QueueFull(pq)){
 
-	pq->rear = (pq->rear+1) % MaxSize;
+	pq->rear = (pq->rear+1) % MaxQueue;
 	pq->arr[pq->rear] = e;
 	++pq->size;
 	return 1;
@@ -49,7 +49,7 @@ void DeQueue(QueueEntry *pe , Queue *pq )
     if(!QueueFull(pq))
     {
     *pe = pq->arr[pq->front];
-    pq->front = (pq->front+1) % MaxSize ;
+    pq->front = (pq->front+1) % MaxQueue ;
     --pq->size;
     return 1;}
 
@@ -66,7 +66,7 @@ int QueueFull(Queue *pq)
 int QueueEmpty(Queue *pq)
 {
 	//This Function to return if the Queue if Empty 
-    return pq->size == MaxSize - 1;
+    return pq->size == MaxQueue - 1;
 }
 
 void ReverseQueue( Queue *pq , void(*pf)(QueueEntry) )
