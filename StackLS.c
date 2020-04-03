@@ -102,7 +102,7 @@ void ClearStack(Stack *ps)
   }
   ps->size = 0;
 }
-void TraverStakc(Stack *ps , void(*pf) (StackEntry))
+void TraverStack(Stack *ps , void(*pf) (StackEntry))
 {
     //This Function to pass every element in the stack in Function
     //param : address of the stack , address of the function
