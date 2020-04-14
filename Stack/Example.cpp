@@ -1,5 +1,5 @@
 #include<iostream>
-#include "SSS.h"
+#include "Stack.h"
 using namespace std;
 int main()
 {
