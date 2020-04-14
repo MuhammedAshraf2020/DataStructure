@@ -1,4 +1,4 @@
-#include "Stack.h"
+#include "Head.h"
 #include <stdio.h>
 #include <stdlib.h>
 #ifdef Linked_Stack
