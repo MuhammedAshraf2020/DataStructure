@@ -1,16 +1,13 @@
+#include "Stack.h"
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
-
-#include "stack.h"
-
 #ifdef Linked_Stack
 
 void CreateStack( Stack *ps )
 {
     // This Function to make initialization for the stack
     // param: Stack address
-    //return: Void   
+    //return: Void
     ps->top = NULL ;
     ps->size = 0;
 }
@@ -20,14 +17,14 @@ void push(StackEntry e , Stack *ps)
 
     // This Function to push element into the stack : pre condition : Stack Not Full
     // param: value of element which you want to push , adress of Stack
-    // return:1 when mession get suc 
+    // return:1 when mession get suc
     // return:0 when mission get Faild
 
-    StackNode *pn ;
+    StackNode *pn = (StackNode*)malloc(sizeof(StackNode)) ;
     pn->entry = e;
-     pn->next = ps->top;
+    pn->next = ps->top;
     ps->top = pn;
-    ps->size += 1; 
+    ps->size += 1;
 }
 
 int StackEmpty(Stack *ps)
@@ -36,7 +33,7 @@ int StackEmpty(Stack *ps)
     // param: Stack's address
     //return: 1 when stack is Empty
     //return: 0 when stack is Not Empty
-    return ps->size == 0; 
+    return ps->size == 0;
 }
 int StackTop(StackEntry *pe , Stack *ps )
 
@@ -59,7 +56,7 @@ int StackTop(StackEntry *pe , Stack *ps )
 
 int StackFull(Stack *ps)
 {
-    // This Function always return Stack is not Full 
+    // This Function always return Stack is not Full
     // param : address of the stack
     // return: always return 0
     return 0;
@@ -78,7 +75,8 @@ int pop(StackEntry *pe , Stack *ps)
    ps->top = ps->top->next;
    free(pn);
    ps->size -=1;
-  
+   return 0;
+
 }
 
 void ClearStack(Stack *ps)
@@ -90,7 +88,7 @@ void ClearStack(Stack *ps)
   while(pn)
   {
     pn = pn->next;
-    free(ps->top);    
+    free(ps->top);
     ps->top = pn;
   }
   ps->size = 0;
@@ -140,10 +138,10 @@ int push(StackEntry e , Stack *ps)
 {
     // This Function to push element into the stack : pre condition : Stack Not Full
     // param: value of element which you want to push , adress of Stack
-    // return:1 when mession get suc 
+    // return:1 when mession get suc
     // return:0 when mission get Faild
 
-    if(!StackFull(ps))
+    if(!StackFull(*ps))
     {
         ps->entry[ps->top++] = e ;
         return 1;
@@ -175,7 +173,7 @@ int pop( StackEntry *pe , Stack *ps)
         *pe =  ps->entry[--ps->top];
 		return 1;
 	}
-	
+
 	else
 		return 0;
 }
