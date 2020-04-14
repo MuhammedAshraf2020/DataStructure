@@ -1,8 +1,8 @@
-#include "Global.h"
-
+#define StackEntry int
+#define MaxStack 3
 #define Linked_Stack
 
-#ifdef Linked_Stack 
+#ifdef Linked_Stack
 /************************************************************************************************************************/
 /*												LINKED BASED                                                             /
 /************************************************************************************************************************/
@@ -11,7 +11,7 @@ typedef struct stacknode
 {
     StackEntry entry;
     struct stacknode *next;
-    
+
 }StackNode;
 
 
@@ -19,7 +19,7 @@ typedef struct stack
 {
     StackNode *top;
     int size;
-}Stack; 
+}Stack;
 
 #else
 /************************************************************************************************************************/
@@ -51,4 +51,3 @@ void ClearStack(Stack *);
 void TraverStack(Stack * , void(*) (StackEntry));
 
 int StackSize(Stack *);
-
