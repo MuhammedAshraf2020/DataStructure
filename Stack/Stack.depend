@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1586861291 source:/root/Desktop/Stack/main.cpp
+	<iostream>
+	"SSS.h"
+
