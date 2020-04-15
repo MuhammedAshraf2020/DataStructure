@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1586947649 source:/root/Desktop/Queue/main.cpp
+	<iostream>
+	"Queue.h"
+
+1586948849 /root/Desktop/Queue/Queue.h
+	<stdio.h>
+	<stdlib.h>
+	"Head.h"
+
+1586892807 /root/Desktop/Queue/Head.h
+
