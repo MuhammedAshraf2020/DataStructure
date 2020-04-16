@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1587031622 source:/root/Desktop/List/main.cpp
+	<iostream>
+	"List.h"
+
+1587024236 /root/Desktop/List/Head.h
+
+1587031918 /root/Desktop/List/List.h
+	<iostream>
+	"Head.h"
+
